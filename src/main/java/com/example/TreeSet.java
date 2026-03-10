@@ -114,7 +114,7 @@ public class TreeSet<E extends Comparable<E>> implements Iterable<E> {
         Node parent = null, cur = root; // starta sökningen från roten
         while (cur != null) { // loopa tills vi hittar noden att ta bort eller når slutet av trädet
             int cmp = key.compareTo(cur.data); // jämför söknyckeln med nodens data
-            if (cmp == 0) break;
+            if (cmp == 0) break; // hittade noden att ta bort
             parent = cur;
             cur = (cmp < 0) ? cur.left : cur.right; // gå vänster eller höger beroende på jämförelsen
         }
@@ -171,7 +171,7 @@ public class TreeSet<E extends Comparable<E>> implements Iterable<E> {
         // Hitta uppföljaren. en steg höger, sedan hela vägen vänster
         Node succParent = target;
         Node successor = target.right;
-        while (successor.left != null) {
+        while (successor.left != null) { 
             succParent = successor;
             successor = successor.left;
         }
