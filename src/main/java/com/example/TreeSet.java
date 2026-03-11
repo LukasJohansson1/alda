@@ -10,7 +10,7 @@ import java.util.ConcurrentModificationException;
 // the binary search tree, but help make the linked list part of the code simpler.
 
 // Vi har ett binärtsöktrad med sökning och insättning/borttagning i O (log n) med en dubbellänkad lista som gör iteration i sorterad ordning enkelt.
-// Intresanta metoder att gå igenom: add, remove, Iteratorerna, removeBST.
+// Intresanta metoder att gå igenom: add, remove, removeBST, Iteratorerna?
 
 // Sorterad mängd baserad på en binärsökträd.
 // Varje nod har prev/next-pekare som bildar en sorterad dubbellänkad lista.
@@ -129,11 +129,11 @@ public class TreeSet<E extends Comparable<E>> implements Iterable<E> {
     /**
      * Tar bort {@code target} från binärsökträdet och från den länkade listan.
      *
-     * <h3>Fall 1 – noll eller ett barn</h3>
+     * <h3>Fall 1: noll eller ett barn</h3>
      * Target tas bort från listan genom att hoppa över den (prev och next
      * pekar på varandra), och ersätts i trädet med dess enda barn (eller null).
      *
-     * <h3>Fall 2 – två barn</h3>
+     * <h3>Fall 2: två barn</h3>
      * Vi kan inte bara plocka bort target ur trädet, det hade brutit BST-ordningen.
      * Strategin är att {@code target} behåller sin plats i trädet men får ett
      * nytt värde, hämtat från dess <em> in-order-uppföljare</em> (den minsta noden
